@@ -1,8 +1,24 @@
+/* Блок анимации */
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotation {
+  animation: rotation 20s linear infinite;
+}
+/* Конец блока rotation */
+
+
 .page {
   min-width: 1100px;
   max-width: 1600px;
   margin: 0 auto;
-  font-family: 'Arial', 'Helvetica Neue', sans-serif;
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
 }
 
 /* Блок - header */
@@ -14,6 +30,7 @@
   background-color: #f2f2f2;
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .logo {
@@ -54,6 +71,11 @@
 .header__link {
   color: #2f80ed;
   text-decoration: none;
+  transition: opacity .15s;
+}
+
+.header__link:hover {
+  opacity: .7;
 }
 
 .header__main-illustration {
@@ -121,7 +143,7 @@
 }
 /* Конец блока - description */
 
-/* Блок - digits */
+/* Блок - techniques */
 .section-title {
   line-height: 1.15;
   font-size: 60px;
@@ -131,7 +153,7 @@
   margin: 0;
 }
 
-.digits__section-title {
+.techniques__section-title {
   margin: 100px auto 20px;
 }
 
@@ -142,6 +164,108 @@
   font-weight: normal;
   text-align: center;
   margin: 0;
+}
+
+.techniques__section-subtitle {
+  margin: auto;
+}
+
+.cards {
+  width: 920px;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.techniques__cards {
+  margin: 0 auto;
+}
+
+.cards__item {
+  list-style: none;
+  padding: 0;
+  margin: 60px 100px 0 0;
+  width: 240px;
+  text-align: center;
+}
+
+.cards__item:nth-of-type(3n) {
+  margin-right: 0;
+}
+
+.cards__image {
+  width: 160px;
+  height: 160px;
+  margin: 0 40px 43px;
+  border-radius: 50%;
+}
+
+.cards__title {
+  line-height: 1.15;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+.cards__description {
+  line-height: 23px;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+}
+/* Конец блока - techniques */
+
+/* Блок - video */
+.video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video__section-title {
+  margin: 100px 0 20px;
+}
+
+.video__section-subtitle {
+  margin: 0;
+}
+
+.video__iframes {
+  display: flex;
+  width: 1050px;
+  height: 316px;
+  justify-content: space-between;
+  position: relative;
+  bottom: -50px;
+}
+
+.video__iframe {
+  margin: 0;
+  padding: 0;
+  width: 515px;
+  height: 316px;
+}
+
+/* конец блока - video */
+
+/* блок - oakley */
+.oakley {
+  background-color: #f2f2f2;
+  box-sizing: content-box;
+  padding-top: 160px;
+}
+
+.oakley__two-columns {
+  margin: auto;
+}
+
+/* конец блока - oakley */
+
+
+/* Блок - digits */
+.digits__section-title {
+  margin: 100px auto 20px;
 }
 
 .digits__section-subtitle {
@@ -182,6 +306,81 @@
 }
 /* Конец блока - digits */
 
+/* Блок - Khan */
+.khan {
+  background-color: #f2f2f2;
+  padding-top: 100px;
+  box-sizing: content-box;
+}
+
+.khan__container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+}
+
+.khan__author {
+  line-height: 42px;
+  font-size: 30px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.khan__title {
+  line-height: 1.15;
+  font-size: 60px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.khan__quote {
+  line-height: 34px;
+  font-size: 24px;
+  font-weight: normal;
+  width: 790px;
+  margin: 50px 0 36px;
+}
+
+.khan__quote-author {
+  line-height: 1.15;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.khan__quote-author-subline {
+  line-height: 1.15;
+  font-size: 24px;
+  font-weight: normal;
+  margin: 10px 0 68px;
+}
+
+.khan__book-container {
+  display: flex;
+}
+
+.khan__book-pic {
+  width: 620px;
+  height: 608px;
+  margin-right: 48px;
+}
+
+.khan__buy-link {
+  align-self: flex-start;
+  line-height: 42px;
+  font-size: 30px;
+  font-weight: normal;
+  text-decoration: none;
+  color:#2f80ed;
+  transition: opacity .15s;
+}
+
+.khan__buy-link:hover {
+  opacity: .7;
+}
+/* Конец блока - Khan */
+
 /* Блок - feynman */
 .feynman {
   background-color: #f2f2f2;
@@ -220,7 +419,11 @@
   top: 50%;
   right: 45px;
   z-index: 1;
+  transition: opacity .15s;
+}
 
+.feynman__link:hover {
+  opacity: .7;
 }
 
 .feynman__image {
@@ -292,6 +495,34 @@
 }
 /* Конец блока - kaufman */
 
+/* Блок - resources */
+.resources__section-title {
+  margin: 100px auto 20px;
+}
+
+.resources__section-subtitle {
+  margin: 0 auto 80px;
+}
+
+.resources__logo-zone {
+  margin: 0 auto 217px;
+  width: 1100px;
+  }
+
+.resources__link {
+  transition: opacity .15s;
+}
+
+.resources__link:hover {
+  opacity: .7;
+}
+
+.resources__logo {
+  width: 270px;
+  height: 38px;
+}
+/* Конец блока - resources */
+
 /* Блок - Footer */
 .footer {
   min-height: 350px;
@@ -352,6 +583,11 @@
   font-weight: normal;
   text-decoration: none;
   color: white;
+  transition: opacity .15s;
+}
+
+.footer__column-link:hover {
+  opacity: .7;
 }
 
 .footer__column-link:has(.footer__social-icon) {
